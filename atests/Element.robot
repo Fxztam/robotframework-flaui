@@ -61,12 +61,20 @@ Is Element Not Enabled
     ${IS_ENABLED}  Is Element Enabled  ${XPATH_DISABLED_ELEMENT}
     Should Be Equal  ${IS_ENABLED}  ${FALSE}
 
+Is Element Enabled If Not Exists
+    ${IS_ENABLED}  Is Element Enabled  ${XPATH_NOT_EXISTS}
+    Should Be Equal  ${IS_ENABLED}  ${FALSE}
+
 Is Element Visible
     ${IS_VISIBLE}  Is Element Visible  ${XPATH_ELEMENT}
     Should Be True  ${IS_VISIBLE}
 
-Is Element Offscreen And Not Visible
+Is Element Visible When Element Is Offscreen And Not Visible
     ${IS_VISIBLE}  Is Element Visible  ${XPATH_OFFSCREEN_ELEMENT}
+    Should Be Equal  ${IS_VISIBLE}  ${False}
+
+Is Element Visible When Element Not Exists
+    ${IS_VISIBLE}  Is Element Visible  ${XPATH_NOT_EXISTS}
     Should Be Equal  ${IS_VISIBLE}  ${False}
 
 Element Should Be Visible
